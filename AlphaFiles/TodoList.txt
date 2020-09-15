@@ -1,0 +1,61 @@
+
+    Movement System - controlling the Player movement and rotation
+    Shooting System - governing the targeting and bullets
+    Input System - MANDATORY
+    Enemy script spawning system - controlling how enemies spawn
+    Camera Follow System
+    Naming convention - All code and assets need to maintain a consistent naming convention
+    Animation System - animated models (i.e. idle, shooting, and so forth) - OPTIONAL - 
+    Particle FX - OPTIONAL - 
+
+......................................................................................................................
+
+Movement System
+	Code for Player
+
+	Code for Grunt
+		moving closer to Player over time
+	Code for Boss
+		moving closer to Player over time
+
+Shooting system
+	Code for Player
+		Shoot Ball
+	Code for Ball
+		collision Ball w/ Wall
+			Must Edge Collider be connected to itself?
+		collision Ball w/ Grunt
+		collision Ball w/ Boss
+		bounce Ball on wall
+		
+
+Input System
+	Code for Player
+		moving y = ws
+		moving x = ad
+		shooting Ball = spacebar		
+			
+Enemy script spawning system
+	Code for Grunt
+		spawning at Start
+	Code for Boss
+		spawning when Grunt destroyed
+
+Camera Follow System
+	Code for Player
+		Camera following Player
+
+Naming Convention
+	Visual Studio
+		Private _nameName
+		Public nameName
+	Assets
+		Asset_Name
+
+Modelling
+	Player
+		
+	Grunt
+		Fix Sprite Outline in Sprite Editor or Copy from Player
+	Boss
+		Fix Sprite Outline in Sprite Editor or Copy from Player
