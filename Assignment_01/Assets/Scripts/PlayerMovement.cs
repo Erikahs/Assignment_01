@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeedX;
     public float moveSpeedY;
     public Rigidbody2D theRB;
-    public LayerMask hitlayer;
+    public LayerMask hitlayer; //Används EJ
 
 
     void Update()
