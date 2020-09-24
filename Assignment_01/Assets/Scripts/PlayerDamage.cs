@@ -16,15 +16,15 @@ public class PlayerDamage : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player")
-        {
-            PlayerHealthController.instance.DealDamage();
-            LevelManager.instance.RespawnPlayer();
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.tag == "Player")
+    //    {
+    //        PlayerHealthController.instance.DealDamage();
+    //        LevelManager.instance.RespawnPlayer();
 
-        }
-    }
+    //    }
+    //}
 
       
     
