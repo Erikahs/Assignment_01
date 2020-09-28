@@ -12,7 +12,6 @@ public class GruntMovement : MonoBehaviour
 
     private Rigidbody2D _theRB;
 
-    // Start is called before the first frame update
     void Start()
     {
         _theRB = GetComponent<Rigidbody2D>();
@@ -22,8 +21,6 @@ public class GruntMovement : MonoBehaviour
         leftPoint.parent = null;
         rightPoint.parent = null;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (_movingRight)

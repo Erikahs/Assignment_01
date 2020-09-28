@@ -4,34 +4,27 @@ using UnityEngine;
 
 public class WallScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public PlayerHealthController pH;
+    public BallEnergizedScript bE;
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-
-            // Debug.Log("Hit");
-
-            // FindObjectOfType<PlayerHealthController>().DealDamage();    <- Simple
-
-            PlayerHealthController.instance.DealDamage();
-
+            pH.DealDamage();
         }
 
-
-
-
-
+        if (other.tag == "Ball")
+        {
+            bE.EnergizeBall();
+        }
     }
 }

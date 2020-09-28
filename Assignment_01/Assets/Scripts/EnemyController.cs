@@ -7,12 +7,12 @@ public class EnemyController : MonoBehaviour
     public bool isGrunt;
     public bool isBoss;
 
-    public GameObject spawnBoss;
+    // public GameObject spawnBoss;
      
          
     public void Awake()
     {
-        spawnBoss.SetActive(false);
+        // spawnBoss.SetActive(false);
     }
 
     void Start()
@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
 
                 // Instantiate(spawnBoss, spawnPointBoss, transform.rotation);             
 
-                spawnBoss.SetActive(true);
+                // spawnBoss.SetActive(true);
             }
 
 

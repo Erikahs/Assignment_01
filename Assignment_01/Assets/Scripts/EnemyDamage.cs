@@ -4,39 +4,62 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    public BallSpawnerScript bSS;
+    public BallEnergizedScript bE;
+    public BossSpawnerScript bS;
+    public PlayerHealthController pH;
+
     public bool isGrunt;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
-    }
 
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player") // <- Change this to "Ball"
+        if (other.tag == "Ball")
         {
-            // PlayerHealthController.instance.DealDamage();
-            // LevelManager.instance.RespawnPlayer();
-            if (isGrunt)
+            if (bE.energizeball)
             {
-                Destroy(gameObject);
-
-                // Instantiate(spawnBoss, spawnPointBoss, transform.rotation);             
-
+                if (isGrunt)
+                {
+                    bS.SpawnBoss();
+                    bE.energizeball = false;
+                    Destroy(gameObject);
+                    Destroy(other.gameObject);
+                    bSS.SetSpawnable();
+                }
+                else
+                {
+                    bSS.SetSpawnable();
+                    Destroy(gameObject);
+                    Destroy(other.gameObject);
+                }
 
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(other.gameObject);
+                bSS.SetSpawnable();
             }
-            
 
+        }
+        else if (other.tag == "Player")
+        {
+            if (isGrunt)
+            {
+
+                pH.DealDamage();
+            }
+            else
+            {
+                pH.DealDamage();
+
+            }
         }
     }
 }

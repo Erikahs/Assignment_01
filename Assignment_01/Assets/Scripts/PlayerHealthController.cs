@@ -6,6 +6,7 @@ public class PlayerHealthController : MonoBehaviour
 {
     public static PlayerHealthController instance;
 
+    public LevelManager lM;
     public int currentHealth, maxHealth;
 
 
@@ -13,27 +14,22 @@ public class PlayerHealthController : MonoBehaviour
     {
         instance = this;
     }
-
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
     public void DealDamage()
     {
-        currentHealth --;
-        
-        if(currentHealth <= 0)
+        currentHealth--;
+
+        if (currentHealth <= 0)
         {
             gameObject.SetActive(false);
-
+            lM.RespawnPlayer();
         }
     }
 }

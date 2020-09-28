@@ -15,13 +15,11 @@ public class LevelManager : MonoBehaviour
     }
     void Start()
     {
-        
-    }
 
-    // Update is called once per frame
+    }
     void Update()
     {
-        
+
     }
 
     public void RespawnPlayer()
@@ -37,6 +35,5 @@ public class LevelManager : MonoBehaviour
 
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.transform.position = CheckPointController.instance.transform.position;
-
     }
 }
